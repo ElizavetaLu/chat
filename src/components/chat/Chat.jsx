@@ -26,6 +26,7 @@ const Chat = ({ userName, auth, firestore }) => {
             text: formValue,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
             uid,
+            userName
         })
 
         setFormValue('');
@@ -40,7 +41,7 @@ const Chat = ({ userName, auth, firestore }) => {
         <div className="container">
             {/* <div className="area" style={{backgroundImage: 'url("/green-gf3eb37345_1920.jpg")'}}> */}
             <div className="area" >
-                {messages && messages.map(msg => <ChatMessage userName={userName} key={msg.text} message={msg} auth={auth} />)}
+                {messages && messages.map(msg => <ChatMessage key={msg.text} message={msg} auth={auth} />)}
                 {/* <span ref={dummy}></span>s */}
 
 

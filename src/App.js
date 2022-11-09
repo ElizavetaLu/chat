@@ -8,8 +8,7 @@ import { getAuth, signInAnonymously } from "firebase/auth";
 import { useAuthState } from 'react-firebase-hooks/auth';
 // import { useCollectionData } from 'react-firebase-hooks/firestore';
 import firebase from 'firebase/compat/app';
-import 'firebase/compat/firestore';
-
+import { initializeFirestore } from 'firebase/firestore';
 
 // const firebaseConfig = {
 //   apiKey: "AIzaSyBQaaoaKHqQus7e9XTlnpn491tAAAeXEXc",
@@ -23,7 +22,7 @@ import 'firebase/compat/firestore';
 
 // const app = initializeApp(firebaseConfig);
 
-firebase.initializeApp({
+const test = firebase.initializeApp({
   apiKey: "AIzaSyBQaaoaKHqQus7e9XTlnpn491tAAAeXEXc",
   authDomain: "online-chat-11a30.firebaseapp.com",
   projectId: "online-chat-11a30",
@@ -33,6 +32,8 @@ firebase.initializeApp({
   measurementId: "G-MYHZ86M25N"
 })
 
+
+
 // const auth = firebase.auth();
 const firestore = firebase.firestore();
 
@@ -40,6 +41,11 @@ const firestore = firebase.firestore();
 // const analytics = getAnalytics(app);
 
 const auth = getAuth();
+
+initializeFirestore(test, {
+  experimentalForceLongPolling: true,
+})
+
 
 
 function App() {
@@ -67,7 +73,7 @@ function App() {
   return (
     <div className="main">
       {isAuth
-        ? <Chat userName={userName} auth={auth} firestore={firestore}/>
+        ? <Chat userName={userName} auth={auth} firestore={firestore} />
         : <Auth setIsAuth={setIsAuth} setUserName={setUserName} />}
 
     </div>

@@ -1,8 +1,8 @@
 import React from "react";
 import "./chatMessage.scss"
 
-const ChatMessage = ({ message, userName, auth }) => {
-    const { text, uid } = message;
+const ChatMessage = ({ message, auth }) => {
+    const { text, uid, userName } = message;
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
     return (
         <div className={`msg ${messageClass}`}>
