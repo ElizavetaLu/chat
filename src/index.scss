@@ -1,7 +1,9 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: rgb(255, 251, 246);
+  background: rgb(255, 213, 251);
+  background: linear-gradient(165deg, rgba(255, 213, 251, 0.5760869565217391) 0%, rgba(255, 235, 223, 0.9760869565217392) 31%, rgba(246, 221, 201, 1) 54%);
+  
   box-sizing: border-box;
   font-family:'Roboto', sans-serif;
 }

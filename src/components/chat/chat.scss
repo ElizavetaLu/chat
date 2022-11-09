@@ -1,44 +1,80 @@
+$main: rgb(0 147 204 / 90%);
+
 .container {
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     width: 600px;
-    position: relative;
-    height: 70vh;
-    background-size: contain;
-    background-color: #e1e4d359;
-    ;
+    height: 82vh;
+    box-sizing: border-box;
 
-    .area {
-
-        box-sizing: border-box;
-        height: 64vh;
-        border: 1px solid #000;
-        overflow: hidden;
-        overflow-y: scroll;
+    .header {
+        height: 7vh;
+        background: rgb(255, 213, 251);
+        background: linear-gradient(165deg, rgba(255, 213, 251, 0.5760869565217391) 0%, rgba(255, 235, 223, 0.9760869565217392) 31%, rgba(246, 221, 201, 1) 54%);
+        
         display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: flex-end;
-        border-top-left-radius: 8px;
-        border-top-right-radius: 8px;
-        border-bottom: none;
-        padding-bottom: 50px;
+        align-items: center;
+        justify-content: center;
+        border-top-left-radius: 13px;
+        border-top-right-radius: 13px;
+        box-shadow: 1px 4px 15px #b4b4b4;
+        z-index: 100;
+        color: #fff;
+        font-size: 18px;
+
+        img{
+            margin-left: 10px;
+        }
     }
 
-    .message-form {
-        position: absolute;
+    .blur {
+        background-size: cover;
+        height: 63vh;
         display: flex;
-        align-items: flex-start;
-        width: 100%;
-        bottom: 0;
+        align-items: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .area {
+            width: 100%;
+            box-sizing: border-box;
+            height: 63vh;
+            overflow: scroll;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 12px;
+            background-color: #9a9a9a1a;
+        }
+
+    }
+
+
+    .message-form {
+        height: 6vh;
+        width: 600px;
+        position: relative;
+        box-shadow: 1px 4px 15px #b4b4b4;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
 
         .message-textarea {
-            border-right: none;
-            width: 536px;
-            height: 50px;
+            color: rgba(50, 0, 0, 0.571);
+            box-sizing: border-box;
+            padding: 15px;
+            padding-right: 50px;
+            background: rgb(255, 213, 251);
+            background: linear-gradient(165deg, rgba(255, 213, 251, 0.5760869565217391) 0%, rgba(255, 235, 223, 0.9760869565217392) 31%, rgba(246, 221, 201, 1) 54%);
+            
+            border: none;
+            width: 100%;
+            height: 100%;
             resize: none;
             font-family: inherit;
+            font-size: 16px;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
         }
 
         .message-textarea:focus {
@@ -46,14 +82,15 @@
         }
 
         .message-btn {
-            background-color: rgb(255, 236, 247);
-            width: 60px;
-            height: 56px;
-        }
+            position: absolute;
+            right: 10px;
+            bottom: 1vh;
+            background-color: transparent;
+            border: none;
 
-        .message-btn:disabled {
-            background-color: rgba(255, 244, 244, 0.816);
-            border: 1px solid #000;
+            img {
+                transform: rotate(12deg);
+            }
         }
 
     }
