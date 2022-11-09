@@ -57,7 +57,7 @@ const Chat = ({ userName, auth, firestore }) => {
                     onChange={e => setFormValue(e.target.value)} /> */}
 
                 <button className="message-btn" type="submit" disabled={!formValue}>
-                    <img src="chat/icons8-cat-footprint-50.png" alt="" width="30px"/>
+                    <img src="/chat/build/icons8-cat-footprint-50.png" alt="" width="30px"/>
                 </button>
             </form>
         </div>
