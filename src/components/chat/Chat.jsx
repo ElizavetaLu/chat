@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./chat.scss"
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
@@ -7,13 +7,13 @@ import ChatMessage from '../chatMsg/ChatMessage'
 
 const Chat = ({ userName, auth, firestore }) => {
 
-    const dummy = useRef();
     const messagesRef = firestore.collection('messages');
     const query = messagesRef.orderBy('createdAt').limit(25);
-    // console.log(messagesRef)
+
+    const bottomRef = useRef(null);
+
 
     const [messages] = useCollectionData(query);
-    // console.log(messages)
     const [formValue, setFormValue] = useState('');
 
 
@@ -21,45 +21,60 @@ const Chat = ({ userName, auth, firestore }) => {
         e.preventDefault();
 
         const { uid } = auth.currentUser;
-        // console.log(firebase)
         await messagesRef.add({
             text: formValue,
             createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            name: userName,
             uid,
         })
 
         setFormValue('');
-        dummy.current.scrollIntoView({ behavior: 'smooth' });
     }
 
 
+    useEffect(() => {
+        bottomRef.current?.scrollIntoView({behavior: 'smooth'});
+      }, [messages]);
 
+    const sentSound = new Audio("/Text Message Sent.mp3")
+    const playSound = () => sentSound.play()
 
 
     return (
         <div className="container">
-            {/* <div className="area" style={{backgroundImage: 'url("/green-gf3eb37345_1920.jpg")'}}> */}
-            <div className="area" >
-                {messages && messages.map(msg => <ChatMessage userName={userName} key={msg.text} message={msg} auth={auth} />)}
-                {/* <span ref={dummy}></span>s */}
+            <div className="header">
+                Pipka-chat
+                <img src="/chat/build//cats/0e0a7c30f0648804717c6f463fbd676e.png" alt="" width="25px" />
+            </div>
+            <div className="blur" >
+                <div className="area" >
+                    {messages && messages.map((msg, indx) => <ChatMessage key={indx} message={msg} auth={auth} />)}
 
+                    <span ref={bottomRef}></span>
+                </div>
 
             </div>
+
             <form onSubmit={sendMessage} className="message-form">
 
                 <textarea
+                    rows="1"
+                    placeholder="Write a message..."
                     className="message-textarea"
                     value={formValue}
-                    onChange={e => setFormValue(e.target.value)}></textarea>
-                {/* <input
-                    className="message-input"
-                    value={formValue}
-                    onChange={e => setFormValue(e.target.value)} /> */}
+                    onChange={e => setFormValue(e.target.value)}
+                ></textarea>
 
-                <button className="message-btn" type="submit" disabled={!formValue}>
-                    <img src="/chat/build/icons8-cat-footprint-50.png" alt="" width="30px"/>
+                <button
+                    className="message-btn"
+                    type="submit"
+                    disabled={!formValue}
+                    onClick={playSound}
+                >
+                    <img src="/chat/build//icons8-email-send-48.png" alt="" width="25px" />
                 </button>
             </form>
+
         </div>
     )
 }

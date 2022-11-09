@@ -2,51 +2,81 @@
     max-width: 70%;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    margin-right: 10px;
     margin-top: 5px;
-    backdrop-filter: blur(5px);
-
 
     .info {
         display: flex;
         flex-wrap: nowrap;
-        align-items: flex-end;
 
-        .user-name{
-            color: #61002cb0;
+        .user-name {
             font-size: 14px;
-        }
-
-        .send-time {
-            margin-left: 7px;
-            font-size: 12px;
-            color: rgba(193, 193, 193, 0.8);
         }
     }
 
-
-    .msg-text {
-        color: #fff;
-        align-self: flex-end;
+    .msg-area {
+        position: relative;
         box-sizing: border-box;
         border-radius: 25px;
-        padding: 7px;
-        font-size: 15px;
-        background-color: rgb(231 199 196 / 90%);    }
+        padding: 10px 23px 15px 12px;
+        box-shadow: 3px 3px 6px rgb(0 0 0 / 19%);
 
+        .msg-text {
+            font-size: 15px;
+            color: #fff;
+        }
 
+        .send-time {
+            position: absolute;
+            bottom: 2px;
+            right: 10px;
+            font-size: 10px;
+            color: rgba(193, 193, 193, 0.8);
+        }
+    }
 }
 
 
 
-// .msg-container {
 
-//     // position: relative;
 
-//     // .send-time{
-//     //     position: absolute;
-//     //     bottom: 5px;
-//     //     right: 7px;
-//     // }
-// }
+
+.msg.sent {
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 10px;
+
+    .info {
+        .user-name {
+            color: rgb(0, 88, 156);
+        }
+    }
+
+    .msg-area {
+        border-top-right-radius: 0px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(171deg, rgba(255, 255, 255, 1) 0%, rgba(0, 130, 227, 0.671327906162465) 47%, rgba(0, 130, 227, 0.888663967611336) 96%);
+    }
+}
+
+
+
+.msg.received {
+    align-self: flex-start;
+    justify-content: flex-start; 
+    align-items: flex-start; 
+    margin-left: 10px; 
+
+    .info {
+        flex-direction: row-reverse; 
+
+        .user-name {
+            color:  rgb(0, 60, 156);
+        }
+    }
+
+    .msg-area {
+        border-top-left-radius: 0px;
+        background: rgb(255, 255, 255);
+        background: linear-gradient(191deg, rgba(255, 255, 255, 1) 0%, rgba(98, 191, 236, 1) 47%, rgba(70, 154, 221, 1) 96%);
+    }
+}

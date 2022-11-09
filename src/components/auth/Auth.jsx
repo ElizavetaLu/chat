@@ -8,9 +8,9 @@ const Auth = ({ setIsAuth, setUserName }) => {
 
     return (
         <div className="auth-container">
-            <img src="/chat/build/icon.jpg" alt="" className="full-cat-img"/>
+            <img src="/chat/build//cats/icon.jpg" alt="" className="full-cat-img"/>
             <div className="auth-content">
-                <img src="/chat/build/kitty.png" alt="" className="little-cat"/>
+                <img src="/chat/build//cats/kitty.png" alt="" className="little-cat"/>
                 <div className="auth-text">Sign in Pipka-chat</div>
                 <div className="auth">
                     <div className="form__group field">
