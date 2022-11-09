@@ -1,0 +1,60 @@
+.container {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    width: 600px;
+    position: relative;
+    height: 70vh;
+    background-size: contain;
+    background-color: #e1e4d359;
+    ;
+
+    .area {
+
+        box-sizing: border-box;
+        height: 64vh;
+        border: 1px solid #000;
+        overflow: hidden;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        border-bottom: none;
+        padding-bottom: 50px;
+    }
+
+    .message-form {
+        position: absolute;
+        display: flex;
+        align-items: flex-start;
+        width: 100%;
+        bottom: 0;
+
+        .message-textarea {
+            border-right: none;
+            width: 536px;
+            height: 50px;
+            resize: none;
+            font-family: inherit;
+        }
+
+        .message-textarea:focus {
+            outline: none
+        }
+
+        .message-btn {
+            background-color: rgb(255, 236, 247);
+            width: 60px;
+            height: 56px;
+        }
+
+        .message-btn:disabled {
+            background-color: rgba(255, 244, 244, 0.816);
+            border: 1px solid #000;
+        }
+
+    }
+}
