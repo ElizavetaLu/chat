@@ -4,7 +4,6 @@ import firebase from 'firebase/compat/app';
 import 'firebase/compat/firestore';
 import { useCollectionData } from 'react-firebase-hooks/firestore';
 import ChatMessage from '../chatMsg/ChatMessage'
-import { updateDoc, serverTimestamp } from "firebase/firestore";
 
 
 
@@ -25,14 +24,29 @@ const Chat = ({ userName, auth, firestore }) => {
     const messagesRef = firestore.collection('messages');
     const query = messagesRef.orderBy('createdAt');
 
-    // const bottomRef = useRef(null);
-
 
     const [messages] = useCollectionData(query);
     const [formValue, setFormValue] = useState('');
+    const [isLight, setIsLight] = useState(themeLocalStorage)
 
 
-    const ref = useChatScroll(messages)
+    useEffect(() => {
+        const onKeyDown = e => {
+            if (e.keyCode === 13) {
+                sendMessage();
+            }
+        };
+        document.addEventListener('keydown', onKeyDown);
+        return () => {
+            document.removeEventListener('keydown', onKeyDown);
+        };
+    }, []);
+
+
+    useEffect(() => {
+        localStorage.setItem('isLight', JSON.stringify(isLight))
+    }, [isLight])
+
 
     const sendMessage = async (e) => {
         e.preventDefault();
@@ -49,29 +63,7 @@ const Chat = ({ userName, auth, firestore }) => {
         setFormValue('');
     }
 
-
-    // console.log(new Date())
-
-
-    useEffect(() => {
-        const onKeyDown = e => {
-            if (e.keyCode === 13) {
-                sendMessage();
-            }
-        };
-        document.addEventListener('keydown', onKeyDown);
-        return () => {
-            document.removeEventListener('keydown', onKeyDown);
-        };
-    }, []);
-
-
-
-    const [isLight, setIsLight] = useState(themeLocalStorage)
-
-    useEffect(() => {
-        localStorage.setItem('isLight', JSON.stringify(isLight))
-      }, [isLight])
+    const ref = useChatScroll(messages)
 
     return (
         <div className={isLight ? "light" : "dark"}>
@@ -91,6 +83,7 @@ const Chat = ({ userName, auth, firestore }) => {
 
 
                     {messages && messages.map((msg, indx) => <ChatMessage
+                        isLight={isLight}
                         key={indx}
                         message={msg}
                         auth={auth}
@@ -121,8 +114,8 @@ const Chat = ({ userName, auth, firestore }) => {
                     >
 
                         {isLight
-                            ? <img src="/icons/dark.png" alt="" />
-                            : <img src="/icons/light.png" alt="" />
+                            ? <img src="/chat/build//icons/lightT.png" alt="" style={{ width: "25px" }} />
+                            : <img src="/chat/build//icons/darkT.png" alt="" />
                         }
 
                     </button>

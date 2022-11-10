@@ -14,7 +14,8 @@
         padding: 0px 20px;
 
         .chat-name {
-            color: #000;
+            color: #5d5d5d;
+            font-size: 18px;
         }
 
         .theme {
@@ -23,7 +24,7 @@
             justify-content: flex-end;
             height: 22px;
             width: 40px;
-            background-color: #7a73dab0;
+            background-color: #7ebaff;
             border-radius: 50px;
             position: relative;
             padding: 0px 1px;
@@ -41,9 +42,6 @@
                 -webkit-transition: all 0.1s linear;
                 -moz-transition: all  0.1s  linear;
                 -o-transition: all  0.1s  linear;
-
-
-
             }
         }
 
@@ -68,10 +66,12 @@
     }
 
     .message-form {
+        box-sizing: border-box;
         display: flex;
         align-items: center;
         height: 55px;
         width: 100%;
+        padding: 0px 20px;
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         background-color: #eaebef;
@@ -85,7 +85,7 @@
             .msg-input {
                 box-sizing: border-box;
                 padding-left: 15px;
-                width: 90%;
+                width: 100%;
                 outline: none;
                 height: 40px;
                 border: none;
@@ -97,7 +97,7 @@
             .msg-btn {
                 position: absolute;
                 top: 0;
-                right: 5%;
+                right: 5px;
                 height: 40px;
                 width: 40px;
                 display: flex;
@@ -154,7 +154,7 @@
                 height: 20px;
                 width: 20px;
                 border-radius: 50%;
-                background-color: rgb(193, 193, 193);
+                background-color: #fff;
 
 
                 position: absolute;
@@ -193,6 +193,7 @@
     }
 
     .message-form {
+        box-sizing: border-box;
         display: flex;
         align-items: center;
         height: 55px;
@@ -200,6 +201,7 @@
         border-bottom-left-radius: 15px;
         border-bottom-right-radius: 15px;
         background-color: #171924;
+        padding: 0px 20px;
 
         .buttonIn {
             width: 100%;
@@ -210,7 +212,7 @@
             .msg-input {
                 box-sizing: border-box;
                 padding-left: 15px;
-                width: 90%;
+                width: 100%;
                 outline: none;
                 height: 40px;
                 border: none;
@@ -222,7 +224,7 @@
             .msg-btn {
                 position: absolute;
                 top: 0;
-                right: 5%;
+                right: 5px;
                 height: 40px;
                 width: 40px;
                 display: flex;
