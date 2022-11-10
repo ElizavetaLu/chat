@@ -1,13 +1,8 @@
 import React from "react";
 import "./chatMessage.scss"
 
-const ChatMessage = ({ message, auth }) => {
-
-    const { text, createdAt, uid, name } = message;
-
-    const time = createdAt
-        ? new Date(createdAt.seconds).toString().slice(16, 21)
-        : null
+const ChatMessage = ({ message, auth, time }) => {
+    const { text, uid, name } = message;
 
     const messageClass = uid === auth.currentUser.uid ? 'sent' : 'received';
 
