@@ -14,7 +14,7 @@ const ChatMessage = ({ message, auth, time }) => {
 
             <div className="msg-area">
                 <div className="msg-text">  {text}</div>
-                <div className="send-time">{time}</div>
+                <div className="send-time">{time.slice(16,21)}</div>
             </div>
         </div>
     )
