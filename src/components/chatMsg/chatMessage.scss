@@ -115,8 +115,12 @@
     margin-left: 10px;
 
     .msg-area {
-        min-width: 70px;
+        min-width: 80px;
         border-top-left-radius: 0px;
         background-color: #303749;
+
+        .send-time {
+            right: 16px;
+        }
     }
 }
