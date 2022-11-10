@@ -1,5 +1,5 @@
-$primary: #691900bf;
-$secondary: #f6ddc9;
+$primary: #6762cea8;
+$secondary: #ffffff00;
 
 
 .auth-container {
@@ -8,10 +8,8 @@ $secondary: #f6ddc9;
     margin: auto;
     border-radius: 15px;
     background-color: #171924f6;
-    // background: rgb(255, 213, 251);
-    // background: linear-gradient(165deg, rgba(255, 213, 251, 0.5760869565217391) 0%, rgba(255, 235, 223, 0.9760869565217392) 31%, rgba(246, 221, 201, 1) 54%);
     position: relative;
-    box-shadow: 2px 2px 10px rgb(120 120 120 / 26%);
+    box-shadow: 2px 2px 10px rgb(129 129 129);
 
     .full-cat-img {
         width: 140px;
@@ -44,7 +42,7 @@ $secondary: #f6ddc9;
             font-size: 35px;
             font-weight: 700;
             white-space: nowrap;
-            color: #fff;
+            color: rgba(255, 255, 255, 0.756);
         }
 
         .auth {
@@ -64,10 +62,10 @@ $secondary: #f6ddc9;
                 font-family: inherit;
                 width: 100%;
                 border: 0;
-                border-bottom: 1.5px solid #2e0c0072;
+                border-bottom: 1.5px solid $primary;
                 outline: 0;
                 font-size: 20px;
-                color: rgb(106 0 54 / 78%);
+                color: #fff;
                 padding: 7px 0;
                 background: transparent;
                 transition: border-color 0.2s;
@@ -89,7 +87,7 @@ $secondary: #f6ddc9;
                 display: block;
                 transition: 0.2s;
                 font-size: 20px;
-                color: #bfbfbf9d;
+                color: #ffffff30;
             }
 
             .form__field:focus {
@@ -99,7 +97,7 @@ $secondary: #f6ddc9;
                     display: block;
                     transition: 0.2s;
                     font-size: 14px;
-                    color: rgba(56, 20, 0, 0.661);
+                    color: #6762cea8;
                 }
 
                 padding-bottom: 4px;
@@ -151,7 +149,8 @@ $secondary: #f6ddc9;
                 transform: translate(0%, 0%);
                 width: 100%;
                 height: 100%;
-                background: #7069dc;;
+                background: rgb(81, 76, 161);
+                background: linear-gradient(174deg, rgba(81, 76, 161, 1) 0%, rgba(95, 90, 189, 1) 47%, rgba(104, 98, 206, 0.8982722809667674) 96%);
                 border-radius: 10px;
             }
 

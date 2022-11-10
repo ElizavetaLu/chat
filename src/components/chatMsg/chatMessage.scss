@@ -3,22 +3,18 @@
     flex-direction: column;
     margin-top: 5px;
 
-    .info {
-        display: flex;
-        flex-wrap: nowrap;
 
-        .user-name {
-            color: #fff;
-            font-size: 14px;
-        }
+    .user-name {
+        color: #fff;
+        font-size: 13px;
     }
+
 
     .msg-area {
         position: relative;
         box-sizing: border-box;
         border-radius: 25px;
         padding: 10px 23px 15px 12px;
-        box-shadow: 3px 3px 6px rgb(0 0 0 / 19%);
 
         .msg-text {
             font-size: 15px;
@@ -28,7 +24,7 @@
         .send-time {
             position: absolute;
             bottom: 2px;
-            right: 10px;
+            right: 6px;
             font-size: 10px;
             color: rgba(193, 193, 193, 0.8);
         }
@@ -40,7 +36,64 @@
 
 
 
-.msg.sent {
+.msg.sent.light-msg {
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-right: 10px;
+
+
+    .user-name {
+        color: #4e4e4e;
+    }
+
+
+    .msg-area {
+        min-width: 80px;
+        border-bottom-right-radius: 0px;
+        background-color: #92c5ff;
+
+
+        .send-time {
+            color: #e6e6e6d3;
+        }
+    }
+}
+
+
+
+.msg.received.light-msg {
+    align-self: flex-start;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
+
+    .user-name {
+        color: #4e4e4e;
+    }
+
+    .msg-area {
+        min-width: 80px;
+        border-top-left-radius: 0px;
+        background-color: rgb(110 110 110);
+        box-shadow: 2px 2px 3px rgb(0 0 0 / 9%);
+
+        .send-time {
+            color: rgb(163, 163, 163);
+            right: 16px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+.msg.sent.dark-msg {
     flex-direction: column-reverse;
     justify-content: flex-end;
     align-items: flex-end;
@@ -55,17 +108,14 @@
 
 
 
-.msg.received {
+.msg.received.dark-msg {
     align-self: flex-start;
     justify-content: flex-start;
     align-items: flex-start;
     margin-left: 10px;
 
-    .info {
-        flex-direction: row-reverse;
-    }
-
     .msg-area {
+        min-width: 70px;
         border-top-left-radius: 0px;
         background-color: #303749;
     }

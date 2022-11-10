@@ -38,8 +38,7 @@ function App() {
 
   const [user] = useAuthState(auth);
 
-  const [isAuth, setIsAuth] = useState(false)
-  // const [isAuth, setIsAuth] = useState(false)
+  const [isAuth, setIsAuth] = useState(statusLocalStorage)
   const [userName, setUserName] = useState('')
 
   useEffect(() => {
