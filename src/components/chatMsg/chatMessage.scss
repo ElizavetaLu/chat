@@ -1,5 +1,4 @@
 .msg {
-    max-width: 70%;
     display: flex;
     flex-direction: column;
     margin-top: 5px;
@@ -9,6 +8,7 @@
         flex-wrap: nowrap;
 
         .user-name {
+            color: #fff;
             font-size: 14px;
         }
     }
@@ -41,20 +41,15 @@
 
 
 .msg.sent {
+    flex-direction: column-reverse;
     justify-content: flex-end;
     align-items: flex-end;
     margin-right: 10px;
 
-    .info {
-        .user-name {
-            color: rgb(0, 88, 156);
-        }
-    }
-
     .msg-area {
-        border-top-right-radius: 0px;
-        background: rgb(255, 255, 255);
-        background: linear-gradient(171deg, rgba(255, 255, 255, 1) 0%, rgba(0, 130, 227, 0.671327906162465) 47%, rgba(0, 130, 227, 0.888663967611336) 96%);
+        min-width: 80px;
+        border-bottom-right-radius: 0px;
+        background-color: #6862ce;
     }
 }
 
@@ -62,21 +57,16 @@
 
 .msg.received {
     align-self: flex-start;
-    justify-content: flex-start; 
-    align-items: flex-start; 
-    margin-left: 10px; 
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 10px;
 
     .info {
-        flex-direction: row-reverse; 
-
-        .user-name {
-            color:  rgb(0, 60, 156);
-        }
+        flex-direction: row-reverse;
     }
 
     .msg-area {
         border-top-left-radius: 0px;
-        background: rgb(255, 255, 255);
-        background: linear-gradient(191deg, rgba(255, 255, 255, 1) 0%, rgba(98, 191, 236, 1) 47%, rgba(70, 154, 221, 1) 96%);
+        background-color: #303749;
     }
 }

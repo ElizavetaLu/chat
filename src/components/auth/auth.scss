@@ -7,8 +7,9 @@ $secondary: #f6ddc9;
     height: 300px;
     margin: auto;
     border-radius: 15px;
-    background: rgb(255, 213, 251);
-    background: linear-gradient(165deg, rgba(255, 213, 251, 0.5760869565217391) 0%, rgba(255, 235, 223, 0.9760869565217392) 31%, rgba(246, 221, 201, 1) 54%);
+    background-color: #171924f6;
+    // background: rgb(255, 213, 251);
+    // background: linear-gradient(165deg, rgba(255, 213, 251, 0.5760869565217391) 0%, rgba(255, 235, 223, 0.9760869565217392) 31%, rgba(246, 221, 201, 1) 54%);
     position: relative;
     box-shadow: 2px 2px 10px rgb(120 120 120 / 26%);
 
@@ -43,7 +44,7 @@ $secondary: #f6ddc9;
             font-size: 35px;
             font-weight: 700;
             white-space: nowrap;
-            color: #2d0a0079;
+            color: #fff;
         }
 
         .auth {
@@ -150,7 +151,7 @@ $secondary: #f6ddc9;
                 transform: translate(0%, 0%);
                 width: 100%;
                 height: 100%;
-                background: #2e0c00d9;;
+                background: #7069dc;;
                 border-radius: 10px;
             }
 
