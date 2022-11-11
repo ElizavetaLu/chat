@@ -25,8 +25,7 @@ initializeFirestore(test, {
   experimentalForceLongPolling: true,
 })
 
-// const statusLocalStorage = JSON.parse(localStorage.getItem('isAuth') || 'false')
-const userNameLocalStorage = JSON.parse(localStorage.getItem('userName') || 'false')
+const userNameLocalStorage = localStorage.getItem('userName')
 
 function App() {
 
@@ -39,15 +38,11 @@ function App() {
 
   const [user] = useAuthState(auth);
 
-  // const [isAuth, setIsAuth] = useState(statusLocalStorage)
   const [userName, setUserName] = useState(userNameLocalStorage)
 
-  // useEffect(() => {
-  //   localStorage.setItem('isAuth', JSON.stringify(isAuth))
-  // }, [isAuth])
 
   useEffect(() => {
-    localStorage.setItem('userName', JSON.stringify(userName))
+    localStorage.setItem('userName', userName)
   }, [userName])
 
   return (
