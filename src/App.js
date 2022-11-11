@@ -50,7 +50,6 @@ function App() {
       {isAuth
         ? <Chat userName={userName} auth={auth} firestore={firestore} />
         : <Auth setIsAuth={setIsAuth} setUserName={setUserName} />}
-
     </div>
   );
 }
