@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./auth.scss"
 
 
-const Auth = ({ setIsAuth, setUserName }) => {
+const Auth = ({ setUserName }) => {
 
     const [name, setName] = useState('')
 
@@ -27,10 +27,7 @@ const Auth = ({ setIsAuth, setUserName }) => {
                     <button
                         className="auth-btn"
                         disabled={name.length === 0 ? true : false}
-                        onClick={() => {
-                            setIsAuth(true)
-                            setUserName(name)
-                        }}
+                        onClick={() => setUserName(name)}
                     >Sign in</button>
                 </div>
             </div>
